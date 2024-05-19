@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOES WORLD</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+   
+
+</head>
+<style>
+  .card {
+    margin-top: 2%;
+    margin-left: 6%;
+    display: inline-block;
+    flex-wrap: wrap;
+
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .footer {
+    background: #000;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+  }
+
+  .footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+  }
+
+  .footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+  }
+
+  .footer .row a:hover {
+    color: #fff;
+  }
+
+  .footer .row ul {
+    width: 100%;
+  }
+
+  .footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+  }
+
+  .footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+  }
+
+  @media (max-width:720px) {
+    .footer {
+      text-align: left;
+      padding: 5%;
+    }
+
+    .footer .row ul li {
+      display: block;
+      margin: 10px 0px;
+      text-align: left;
+    }
+
+    .footer .row a i {
+      margin: 0% 3%;
+    }
+  }
+</style>
+
+<body>
+  {% for i in messages %}
+  {{i}}
+  {% endfor %}
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'carts' %}">Carts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'newar' %}">New Arrivals</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'useredit' %}">Edit Profile</a>
+        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                {% for category in prodct %}
+
+                <a class="dropdown-item" href="{% url 'categorized_products' category.id %}">{{ category.ca }}
+                </a>
+                <div class="dropdown-divider"></div>
+                {% endfor %}
+            </div>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sign">Logout</a>
+          </li>
+
+        </ul>
+
+        <img
+          src="https://png.pngtree.com/png-vector/20191218/ourlarge/pngtree-sneakers-shoes-logo-with-badge-emblems-in-red-and-orange-gradation-png-image_2091355.jpg"
+          width="10%" height="130px" style="margin-left: 56%;">
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="https://th.bing.com/th/id/R.068ac0c2aa3c810c33c52d2270cb180c?rik=fDUNhVKqRQ3DKw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fJGwAprF.jpg&ehk=Fgk7R7fqIYM78QkPIqb0Z%2fLL7HN30YNvgF2Eo1pfB2s%3d&risl=&pid=ImgRaw&r=0"
+          height="800px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.libertyshoesonline.com/pub/media/wysiwyg/home/Black_Friday_Sale_Banner_1600x584.jpg"
+          height="800px" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img
+          src="https://www.skechers.in/dw/image/v2/BGNZ_PRD/on/demandware.static/-/Sites-skechersin-Library/default/dwbe2b9787/Campaign-Run-Landing/Desktop-Campaign-Run-Landing/Run-Campaign_RIDE_11_revised_hero_banner_Desktop.jpg?sw=1600"
+          height="800px" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+  <h1 style="margin-left: 40%;margin-top: 2%;"><b><ins>DEALS FOR YOU</ins></b></h1>
+  </div>
+  {% for p in pr %}
+  <div class="card" style="width: 15rem;">
+    <img class="card-img-top" src="{{ p.image.url }}" alt="Card image cap" height="250px">
+
+    <div class="card-body">
+      <h4 class="card-title" style="margin-left: 2%;">{{ p.product_name}}</h4>
+
+      <p class="list-group-item">{{ p.product_models}}</p>
+      <p class="list-group-item">{{ p.product_category}}</p>
+      <p class="list-group-item">{{ p.price}}</p>
+
+      <button type="button" class="btn btn-secondary"><a href="{% url 'cart_details' p.id %}"
+          style="text-decoration: none; color: #eee4e4;"> ADD TO CART</a></button>
+    </div>
+  </div>
+  {% endfor %}
+
+
+  <h1 style="margin-left: 45%;margin-top: 2%;"><b><ins>OFFERS</ins></b></h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="https://indiater.com/wp-content/uploads/2018/01/discount-banner-ads-online-sale-brand-shoes.jpg"
+          width="550px" height="700px" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img
+          src="https://sslimages.shoppersstop.com/sys-master/root/hc6/h96/11776029622302/banner_04_640x728_footwearfest_EN_640W_20181008.jpg"
+          height="700px" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="margin-bottom: 2%;">
+        <img src="https://www.newsquarewb.com/wp-content/uploads/2019/03/02_TopDeals-Mens_CarouselAd1-768x768.jpg"
+          height="780px" class="card-img-top" alt="...">
+
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="margin-bottom: 3%;">
+        <img src="https://th.bing.com/th/id/OIP.4lSiUGfcNx7-oRw4_SU5yAHaJg?rs=1&pid=ImgDetMain" height="800px"
+          class="card-img-top" alt="...">
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+
+      <div class="row">
+        <ul>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Our Services</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Career</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

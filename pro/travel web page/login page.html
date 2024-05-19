@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+      body{
+        background-image: url(login.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    .register{
+        background-image: url(login\ 2.png);
+        width: 400px;
+        height: 400px;
+        border: 0px solid green;
+        margin-top: 10%;
+        margin-left: 35%;
+        margin-bottom: 20%;
+        background-color:rgb(255, 255, 255);
+        text-align: center;
+    }
+    nav{
+        box-sizing: content-box;
+        text-align: right;
+    }
+    nav ul li{
+        display:inline-block;
+        margin-left: 10px;
+        margin-right: 20px;
+        color: rgb(210, 210, 247);
+        font-weight: bold;
+    }
+    nav ul li a{
+        text-decoration: none;
+    }
+    img.avatar {
+  width: 20%;
+  border-radius: 30%;
+  margin-left: 5%;
+    }
+   
+    
+    .name{
+        margin-left: 25%;
+        font-style: italic;
+        font-size: 500%;
+    }
+</style>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="places.html">Places</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Login</a></li>
+        </ul>
+    </nav>
+    <div class="logo"><img src="Kerala.png" alt="img" style="height: 10%;width: 10%;"></div>
+    <div class="name">Dream World Travel</h2></div>
+    <div class="register">
+    <h1>Login</h1>
+    <img src="user-avatar.png" alt="Avatar" class="avatar"><br><br>
+    <label>Username:</label>
+    <input type="text" placeholder="Enter Username"><br><br>
+    <label>password:</label>
+    <input type="password" placeholder="Enter Password"><br><br>
+    <button type="submit" style="background-color: #708cc7;border-radius: 10px;padding: 10px 20px;"><a href="home.html">submit</a></button><br><br>
+    <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me<br><br>
+      </label>
+      <label><a href="#">Forget Password?</a></label>
+      <p>Not a member? <a href="register.html">Register</a></p>
+    </div> 
+</body>
+</html>

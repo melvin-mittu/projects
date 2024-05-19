@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+    {% load static %}
+    <style>
+        nav ul li a {
+            margin-left: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        .tbl-header {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .tbl-content {
+            height: 300px;
+            overflow-x: auto;
+            margin-top: 0px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        th {
+            padding: 20px 15px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 18px;
+            color: #0c0c0c;
+            text-transform: uppercase;
+        }
+
+        td {
+            padding: 15px;
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 300;
+            font-size: 14px;
+            color: #1f1e1e;
+            border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body1 {
+            line-height: 1.5;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            margin-left: 30px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a {
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+        @media(max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width:360px) and (max-width:640px) {}
+    </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="super">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'addcategory' %}">Add category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addproduct">Add Products </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="showarrivals">Show Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user">Show user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sign">Logout</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <form>
+        <h1 style="text-align: center;"><b>USERS DETAILS</b></h1>
+        <div style="display:flex; width:98%;height:150%;margin-left: 10px; margin-bottom: 100px;">
+            <table border="2px" style="width: 100%; height: 200%;">
+                <thead>
+                    <th class="table-primary">FIRST NAME</th>
+                    <th class="table-warning">LAST NAME</th>
+                    <th class="table-secondary">ADDRESS</th>
+                    <th class="table-danger" style="width: 20%;">EMAIL-ID</th>
+                    <th class="table-primary">MOBILE NUMBER</th>
+                    <th class="table-warning">USERNAME</th>
+                    <th class="table-info">PHOTO</th>
+                    <th class="table-danger">CANCEL</th>
+
+
+                </thead>
+                <tbody>
+                    {% for sh in shoesuser %}
+                    <tr>
+                        <td class="table-primary"><b>{{sh.user.first_name}}</b></td>
+                        <td class="table-warning"><b>{{sh.user.last_name}}</b></td>
+                        <td class="table-secondary"><b>{{sh.address}}</b></td>
+                        <td class="table-danger"><b>{{sh.user.email}}</b></td>
+                        <td class="table-primary"><b>{{sh.number}}</b></td>
+                        <td class="table-warning"><b>{{sh.user.username}}</b></td>
+                        <td class="table-info">
+                            <img src="{{sh.image.url}}" width="80px" height="80px">
+                        </td>
+                        <td class="table-danger"><button type="button" class="btn btn-danger"><a style="text-decoration: none; color: #f3ebeb;" href="{% url 'deladmin' sh.user.id %}">Delete</a></button></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </form>
+</body>
+
+</html>

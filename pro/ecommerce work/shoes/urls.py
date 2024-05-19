@@ -1,0 +1,41 @@
+from django.urls import path,include
+from . import views
+urlpatterns = [
+    path('',views.newhome,name='newhome'),
+    path('newhome',views.newhome,name='newhome'),
+    path('home',views.home,name='home'),
+    path('newar',views.newar,name='newar'),
+    path('addcategory',views.addcategory,name='addcategory'),
+    path('alogin',views.alogin,name='alogin'),
+    path('contact',views.contact,name='contact'),
+    path('about',views.about,name='about'),
+    path('sign',views.sign,name='sign'),
+    path('signup',views.signup,name='signup'),
+    path('backin',views.backin,name='backin'),
+    path('signin',views.signin,name='signin'),
+    # path('create',views.create,name='create'),
+    path('log',views.log,name='log'),
+    path('super',views.super,name='super'),
+    path('logout',views.logout,name='logout'),
+    path('addproduct',views.addproduct,name='addproduct'),
+    path('useredit',views.useredit,name='useredit'),
+    path('add',views.add,name='add'),
+    path('showarrivals',views.showarrivals,name='showarrivals'),
+    path('deladmin/<int:id>',views.deladmin,name='deladmin'),
+    path('editpage/<int:pk>',views.editpage,name='editpage'),
+    path('edit_shoes/<int:pk>',views.edit_shoes,name='edit_shoes'),
+    path('delete/<int:pk>',views.delete,name='delete'),
+    path('user',views.user,name='user'),
+    path('carts',views.carts,name='carts'),
+    path('cart_details/<int:pk>/',views.cart_details,name='cart_details'),
+    path('removecart/<int:pk>/',views.removecart,name='removecart'),
+    path('removecart1/<int:pk>/',views.removecart1,name='removecart1'),
+    path('addcat',views.addcat,name='addcat'),
+    path('categorized_products/<int:id>',views.categorized_products,name='categorized_products'),
+    path('category',views.category,name='category'),
+    path('addcategory',views.addcategory,name='addcategory'),
+    path('place',views.place,name='place'),
+
+    
+
+]
